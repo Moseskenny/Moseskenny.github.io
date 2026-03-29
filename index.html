@@ -3,182 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moses Kenny | Cloud & DevOps Portfolio</title>
+    <title>Moses Kenny | Digital Portfolio</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
         :root {
-            --bg-color: #1a1a1a;
-            --card-bg: #242424;
-            --accent-color: #ffffff;
-            --text-secondary: #a0a0a0;
+            --bg-color: #f7f7f8;
+            --card-bg: #ffffff;
+            --text-primary: #111111;
+            --text-secondary: #666666;
+            --accent: #000000;
+            --radius: 24px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         body {
             background-color: var(--bg-color);
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
             margin: 0;
+            padding: 0;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
+        /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: var(--transition);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Header / Hero --- */
         header {
             text-align: center;
-            padding-bottom: 60px;
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            background: #eaeaea;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            font-size: 3.5rem;
+            margin: 0 0 20px 0;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
 
-        .tagline {
-            color: var(--text-secondary);
+        header p {
             font-size: 1.2rem;
+            color: var(--text-secondary);
         }
 
+        /* --- Bento Grid Layout --- */
         section {
-            margin-bottom: 50px;
+            margin-bottom: 80px;
         }
 
-        h2 {
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-            font-weight: 400;
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
         }
 
-        .project-grid {
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            transition: transform 0.2s;
-            border: 1px solid #333;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #555;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        /* --- Project Images --- */
+        .project-img-container {
+            width: 100%;
+            height: 200px;
+            border-radius: 16px;
+            background-color: #f0f0f0;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .project-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card:hover .project-img-container img {
+            transform: scale(1.05);
         }
 
         .card h3 {
-            margin-top: 0;
-            color: var(--accent-color);
+            margin: 0 0 10px 0;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            flex-grow: 1;
         }
 
         .tech-stack {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 15px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            margin-top: 20px;
         }
 
-        .skill-tag {
-            background: #333;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .tech-tag {
+            background: var(--bg-color);
+            color: var(--text-primary);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* --- About & Skills specific --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         footer {
             text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid #333;
+            padding: 40px 0;
             color: var(--text-secondary);
+            border-top: 1px solid rgba(0,0,0,0.05);
+            margin-top: 60px;
         }
-
+        
         a {
-            color: #00aaff;
-            text-decoration: none;
+            color: var(--text-primary);
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+        a:hover {
+            color: #0055ff;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>MOSES KENNY</h1>
-        <div class="tagline">Aspiring Cloud Engineer & Automation Specialist</div>
-        <p>Detail-oriented developer with a focus on building scalable, efficient solutions using cloud platforms and Python automation.</p>
+    <header class="reveal">
+        <div class="profile-badge">Available for Work</div>
+        <h1>Hello! I'm Moses Kenny</h1>
+        <p>A cloud engineering student and automation enthusiast based in Bangalore. I build digital products, scalable pipelines, and intelligent tools.</p>
     </header>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-grid">
+    <section class="reveal">
+        <div class="about-grid">
             <div class="card">
+                <h2 style="margin-top:0;">About Me</h2>
+                <p>With a strong technical background and a data-driven approach to problem-solving, I excel at delivering results. I bring the same drive from my passions—football, boxing, and photography—to my professional life.</p>
+                <p>As a creative thinker proficient in Web and App development, I enjoy combining clean code with modern cloud infrastructure.</p>
+            </div>
+            <div class="card" style="background: #111; color: white;">
+                <h3 style="color:white; margin-top:0;">Let's Talk</h3>
+                <p style="color:#aaa;">Looking for a versatile developer for your next cloud or automation project?</p>
+                <div style="margin-top:20px;">
+                    <p>📍 Bangalore - 43</p>
+                    <p>✉️ moseskenny328@gmail.com</p>
+                    <p>🔗 <a href="https://github.com/Moseskenny" style="color:white;">GitHub Profile</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title reveal">Selected Works</h2>
+        <div class="bento-grid">
+            
+            <div class="card reveal">
+                <div class="project-img-container">
+                    <img src="" alt="ToolSuite Interface" onerror="this.style.display='none'; this.parentNode.innerHTML='[ Add ToolSuite Screenshot Here ]'">
+                </div>
                 <h3>ToolSuite</h3>
                 <p>A minimalist desktop utility kit designed for DevOps and maintenance tasks, featuring a cohesive line-art UI.</p>
-                <div class="tech-stack">Python, OS, UI/UX</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">UI/UX</span>
+                </div>
             </div>
 
-            <div class="card">
+            <div class="card reveal">
+                <div class="project-img-container">
+                    <img src="" alt="Drive Automator" onerror="this.style.display='none'; this.parentNode.innerHTML='[ Add Drive Automator Screenshot Here ]'">
+                </div>
                 <h3>Cloud Drive Automator</h3>
-                <p>An automated script using OAuth2.0 to securely upload and manage files in Google Drive via a simple user interface.</p>
-                <div class="tech-stack">Python, Google Drive API, OAuth2.0</div>
+                <p>An automated script utilizing OAuth2.0 for secure, one-click file uploads directly into Google Drive.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OAuth2.0</span>
+                    <span class="tech-tag">Google APIs</span>
+                </div>
             </div>
 
-            <div class="card">
+            <div class="card reveal">
+                <div class="project-img-container">
+                    <img src="" alt="Jenkins Pipeline" onerror="this.style.display='none'; this.parentNode.innerHTML='[ Add Jenkins Screenshot Here ]'">
+                </div>
                 <h3>Auto-Expense Pipeline</h3>
-                <p>A Jenkins-based CI/CD pipeline for automating financial data processing and expense reporting workflows.</p>
-                <div class="tech-stack">Jenkins, Groovy, Shell</div>
+                <p>A Jenkins-based CI/CD pipeline tailored for automating complex financial data processing workflows.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Jenkins</span>
+                    <span class="tech-tag">Shell Scripting</span>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Image Compressor</h3>
-                <p>Batch processing tool that significantly reduces file sizes while maintaining high visual quality.</p>
-                <div class="tech-stack">Python, Pillow, File I/O</div>
+             <div class="card reveal">
+                <div class="project-img-container">
+                    <img src="" alt="File Organizer" onerror="this.style.display='none'; this.parentNode.innerHTML='[ Add File Organizer Screenshot Here ]'">
+                </div>
+                <h3>AI File Organizer</h3>
+                <p>Automatically sorts and organizes files into categorized folders based on file type and metadata logic.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Automation</span>
+                </div>
             </div>
+
         </div>
     </section>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
+    <section class="reveal">
+        <h2 class="section-title">Skills & Technologies</h2>
         <div class="card">
-            <h3>Cloud Intern | Journallab LLP</h3>
-            <p>June 2025 - July 2025</p>
-            <ul>
-                <li>Developed Python automation tools integrating Google Drive API and Google Cloud services.</li>
-                <li>Implemented secure OAuth-based authentication and metadata-driven workflows.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-list">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">AWS (Solution Architect)</span>
-            <span class="skill-tag">DevOps & CI/CD</span>
-            <span class="skill-tag">Azure</span>
-            <span class="skill-tag">Linux & Shell Scripting</span>
-            <span class="skill-tag">Cybersecurity</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Docker</span>
+            <div class="tech-stack" style="margin-top: 0; gap: 12px;">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">C / C++</span>
+                <span class="tech-tag">HTML / CSS / JavaScript</span>
+                <span class="tech-tag">Shell Scripting</span>
+                <span class="tech-tag">AWS Cloud Foundations</span>
+                <span class="tech-tag">VMware Cloud</span>
+                <span class="tech-tag">Jenkins CI/CD</span>
+                <span class="tech-tag">Adobe Suite</span>
+                <span class="tech-tag">Bentley CAD</span>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>Contact: moseskenny09@gmail.com | <a href="https://github.com/Moseskenny">GitHub Profile</a></p>
-        <p>&copy; 2026 Moses Kenny</p>
+        <p>&copy; 2026 Moses Kenny. Designed with clean code & coffee.</p>
     </footer>
 </div>
+
+<script>
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+    window.addEventListener("scroll", reveal);
+    // Trigger once on load
+    reveal();
+</script>
 
 </body>
 </html>
