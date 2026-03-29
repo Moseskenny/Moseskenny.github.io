@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moses Kenny | Cloud & DevOps Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #242424;
+            --accent-color: #ffffff;
+            --text-secondary: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.2s;
+            border: 1px solid #333;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #555;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .tech-stack {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>MOSES KENNY</h1>
+        <div class="tagline">Aspiring Cloud Engineer & Automation Specialist</div>
+        <p>Detail-oriented developer with a focus on building scalable, efficient solutions using cloud platforms and Python automation.</p>
+    </header>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="card">
+                <h3>ToolSuite</h3>
+                <p>A minimalist desktop utility kit designed for DevOps and maintenance tasks, featuring a cohesive line-art UI.</p>
+                <div class="tech-stack">Python, OS, UI/UX</div>
+            </div>
+
+            <div class="card">
+                <h3>Cloud Drive Automator</h3>
+                <p>An automated script using OAuth2.0 to securely upload and manage files in Google Drive via a simple user interface.</p>
+                <div class="tech-stack">Python, Google Drive API, OAuth2.0</div>
+            </div>
+
+            <div class="card">
+                <h3>Auto-Expense Pipeline</h3>
+                <p>A Jenkins-based CI/CD pipeline for automating financial data processing and expense reporting workflows.</p>
+                <div class="tech-stack">Jenkins, Groovy, Shell</div>
+            </div>
+
+            <div class="card">
+                <h3>Image Compressor</h3>
+                <p>Batch processing tool that significantly reduces file sizes while maintaining high visual quality.</p>
+                <div class="tech-stack">Python, Pillow, File I/O</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="card">
+            <h3>Cloud Intern | Journallab LLP</h3>
+            <p>June 2025 - July 2025</p>
+            <ul>
+                <li>Developed Python automation tools integrating Google Drive API and Google Cloud services.</li>
+                <li>Implemented secure OAuth-based authentication and metadata-driven workflows.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">AWS (Solution Architect)</span>
+            <span class="skill-tag">DevOps & CI/CD</span>
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">Linux & Shell Scripting</span>
+            <span class="skill-tag">Cybersecurity</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Docker</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact: moseskenny09@gmail.com | <a href="https://github.com/Moseskenny">GitHub Profile</a></p>
+        <p>&copy; 2026 Moses Kenny</p>
+    </footer>
+</div>
+
+</body>
+</html>
