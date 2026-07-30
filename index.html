@@ -182,6 +182,26 @@
             box-shadow: 0 4px 15px rgba(0, 120, 212, 0.4);
         }
 
+        .apk-badge {
+            background: #3ddc84;
+            color: #050505;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+
+        .apk-badge:hover {
+            background: #32b86c;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(61, 220, 132, 0.4);
+        }
+
         /* --- Expanding Media Accordion --- */
         .media-theatre {
             max-width: 1200px;
@@ -260,20 +280,6 @@
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0.1s;
-        }
-
-        .media-placeholder {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 20px;
-            pointer-events: none;
         }
 
         /* --- Dynamic Repo Button --- */
@@ -382,32 +388,34 @@
         </a>
 
         <a href="https://github.com/Moseskenny/Spend-Scrub" target="_blank" class="project-card core-card" data-target="media-spendscrub">
-    <div class="ms-badge" style="cursor: pointer; z-index: 10;" onclick="window.open('https://apps.microsoft.com/detail/9pkpnmrpmr5w?hl=en-US&gl=IN', '_blank'); event.preventDefault();">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M11.5 12.5H6v6h5.5v-6zm7 0h-5.5v6H18.5v-6zm-7-7H6v6h5.5v-6zm7 0h-5.5v6H18.5v-6z"/></svg>
-        Available on Microsoft Store
-    </div>
-    <h2>SpendScrub</h2>
-    <p>A high-performance, local-first finance engine designed for absolute data sovereignty. Featuring a custom NLP MagicBar for instant transaction logging and high-contrast analytics for real-time capital management.</p>
-    <div class="tag-container" style="justify-content: flex-start; margin-top: 15px;">
-        <span class="tag">React</span><span class="tag">Rust</span><span class="tag">NLP</span><span class="tag">Fintech</span>
-    </div>
-</a>
-
-        <a href="https://github.com/Moseskenny/auto-expense" target="_blank" class="project-card core-card" data-target="media-expense">
-            <h2>Auto-Expense</h2>
-            <p>End-to-end Jenkins pipeline automating financial data ingestion, processing, and reporting with custom Groovy scripts.</p>
+            <div class="ms-badge" style="cursor: pointer; z-index: 10;" onclick="window.open('https://apps.microsoft.com/detail/9pkpnmrpmr5w?hl=en-US&gl=IN', '_blank'); event.preventDefault();">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M11.5 12.5H6v6h5.5v-6zm7 0h-5.5v6H18.5v-6zm-7-7H6v6h5.5v-6zm7 0h-5.5v6H18.5v-6z"/></svg>
+                Available on Microsoft Store
+            </div>
+            <h2>SpendScrub</h2>
+            <p>A high-performance, local-first finance engine designed for absolute data sovereignty. Featuring a custom NLP MagicBar for instant transaction logging and high-contrast analytics for real-time capital management.</p>
             <div class="tag-container" style="justify-content: flex-start; margin-top: 15px;">
-                <span class="tag">Jenkins</span><span class="tag">DevOps Pipelines</span>
+                <span class="tag">React</span><span class="tag">Rust</span><span class="tag">NLP</span><span class="tag">Fintech</span>
             </div>
         </a>
 
-        
-
-        <a href="https://github.com/Moseskenny" target="_blank" class="project-card core-card" data-target="media-drive">
-            <h2>Drive Automator</h2>
-            <p>Secure OAuth 2.0 implementation for automated, one-click file management across Google Cloud services.</p>
+        <a href="https://github.com/Moseskenny/Plexus-PDF" target="_blank" class="project-card core-card" data-target="media-plexus">
+            <div class="apk-badge" style="cursor: pointer; z-index: 10;" onclick="window.open('https://github.com/Moseskenny/Plexus-PDF/releases/latest', '_blank'); event.preventDefault();">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.52 0a1.04 1.04 0 0 0-.82.41L13.8 4.36A12.4 12.4 0 0 0 12 4.23c-.61 0-1.22.05-1.8.13L7.3.41A1.04 1.04 0 0 0 6.48 0a1.05 1.05 0 0 0-.85.45c-.23.34-.18.8.11 1.1l2.42 3.12A12.82 12.82 0 0 0 2 12c0 2.28.59 4.41 1.63 6.27L2 21.5a1 1 0 0 0 1.41 1.41l3.38-1.7A12.8 12.8 0 0 0 12 22.8c1.86 0 3.61-.4 5.21-1.12l3.38 1.7A1 1 0 0 0 22 21.5l-1.63-3.23A12.82 12.82 0 0 0 22 12c0-2.65-.8-5.11-2.16-7.33l2.42-3.12c.3-.3.34-.76.11-1.1A1.05 1.05 0 0 0 21.52 0h-4z"/></svg>
+                Download Android APK
+            </div>
+            <h2>Plexus PDF</h2>
+            <p>An offline, privacy-first PDF studio and document scanner. Merge, convert, sign, split, scan, and watermark entirely client-side with zero network uploads or tracking.</p>
             <div class="tag-container" style="justify-content: flex-start; margin-top: 15px;">
-                <span class="tag">Google Cloud</span><span class="tag">OAuth 2.0 API</span>
+                <span class="tag">React</span><span class="tag">Capacitor</span><span class="tag">Tailwind</span><span class="tag">PDF-Lib</span>
+            </div>
+        </a>
+
+        <a href="https://github.com/Moseskenny" target="_blank" class="project-card core-card" data-target="media-autoexpense">
+            <h2>Auto-Expense Pipeline</h2>
+            <p>Automated cloud infrastructure deployment using Docker, Jenkins, and shell scripting to streamline continuous integration and delivery for financial tracker microservices.</p>
+            <div class="tag-container" style="justify-content: flex-start; margin-top: 15px;">
+                <span class="tag">Jenkins</span><span class="tag">Docker</span><span class="tag">CI/CD Pipeline</span>
             </div>
         </a>
 
@@ -433,21 +441,6 @@
             </div>
         </div>
 
-        <div class="media-row" id="media-expense">
-            <div class="media-item">
-                <img src="images/expense1.PNG" alt="Jenkins Console Execution">
-                <div class="media-label">Pipeline Execution</div>
-            </div>
-            <div class="media-item">
-                <img src="images/expense(2).PNG" alt="Code Repository">
-                <div class="media-label">Code Repository</div>
-            </div>
-            <div class="media-item">
-                <img src="images/Expense(3).gif" alt="Automated Report">
-                <div class="media-label">Automated Report</div>
-            </div>
-        </div>
-
         <div class="media-row" id="media-spendscrub">
             <div class="media-item">
                 <img src="images/Capture.PNG" alt="Store page">
@@ -463,18 +456,37 @@
             </div>
         </div>
 
-        <div class="media-row" id="media-drive">
+        <div class="media-row" id="media-plexus">
             <div class="media-item">
-                <img src="images/drive1.PNG" alt="Code">
-                <div class="media-label">Code</div>
+                <img src="screenshots/home.jpg" alt="Plexus PDF Home View">
+                <div class="media-label">Home Screen</div>
             </div>
             <div class="media-item">
-                <img src="images/drive2.PNG" alt="GitHub Repo">
-                <div class="media-label">GitHub Repo</div>
+                <img src="screenshots/scanner.jpg" alt="Plexus PDF Scanner">
+                <div class="media-label">Document Scanner</div>
             </div>
             <div class="media-item">
-                <img src="images/drive3.gif" alt="Workflow">
-                <div class="media-label">Workflow</div>
+                <img src="screenshots/merge.jpg" alt="Plexus PDF Merge Tool">
+                <div class="media-label">PDF Merge & Organize</div>
+            </div>
+            <div class="media-item">
+                <img src="screenshots/about.jpg" alt="Plexus PDF Privacy Overview">
+                <div class="media-label">Privacy & Settings</div>
+            </div>
+        </div>
+
+        <div class="media-row" id="media-autoexpense">
+            <div class="media-item">
+                <img src="images/jen1.PNG" alt="Jenkins Dashboard">
+                <div class="media-label">Jenkins Dashboard</div>
+            </div>
+            <div class="media-item">
+                <img src="images/jen2.PNG" alt="Build Pipeline UI">
+                <div class="media-label">Build Pipeline UI</div>
+            </div>
+            <div class="media-item">
+                <img src="images/jen3.gif" alt="Automated Deployment Log">
+                <div class="media-label">Automated Deployment Log</div>
             </div>
         </div>
 
